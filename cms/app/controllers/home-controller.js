@@ -7,7 +7,8 @@ var HomeController = {
 
     usuario: function(req, res, next) {
         var usuario = new Usuario();
-        usuario.nome = "Wellington";
+        usuario.id = 1;
+        usuario.nome = "Wellington Fernando";
         usuario.login = "prico182";
         usuario.senha = "prico182";
         usuario.email = "prico182@gmail.com";
@@ -16,6 +17,6 @@ var HomeController = {
 
         res.send("Nome: " + usuario.nome + "<br />Login: " + usuario.login + "<br />Email: " + usuario.email);
     }
-}
+};
 
 module.exports = HomeController;

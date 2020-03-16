@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cross domain</title>
+</head>
+<body>
+    <h1>Teste de Cross Domain</h1>
+    <button type="button" onclick="salvar();">Salvar</button>
+    
+    <script src="../javascripts/jquery-1.11.0.min.js"></script>
+    <script>
+        function salvar() {
+            $.ajax({
+                method: "PATCH",
+                url: "http://localhost:3000/usuarios/2",
+                data: {
+                    nome: "James Brown",
+                    login: "brown",
+                    senha: "123",
+                    email: "james@gmail.com"
+                }
+            }).done(function( msg ) {
+                alert("Usuário incluído por ajax");
+            });
+        }
+    </script>
+</body>
+</html>
